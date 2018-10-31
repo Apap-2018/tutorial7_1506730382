@@ -1,0 +1,454 @@
+{
+	"info": {
+		"_postman_id": "7a87519c-3ce7-440c-8ab6-fa0af45f904e",
+		"name": "Tutorial 7 - Web Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Pilot",
+			"item": [
+				{
+					"name": "Mock",
+					"item": [
+						{
+							"name": "Get full status",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json;charset=UTF-8",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}/pilot",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"pilot"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "full",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{url}}/pilot",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"pilot"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "html",
+									"header": [
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": ""
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": ""
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": ""
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Access-Control-Expose-Headers",
+											"value": ""
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Content-Type",
+											"value": "text/html; charset=utf-8"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 31 Oct 2018 11:18:00 GMT"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"39-x0kRPQoZX1T1LPPw9jjEJQ\""
+										},
+										{
+											"key": "Server",
+											"value": "nginx"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "Content-Length",
+											"value": "72"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n\t\"status\" : \"inactive\",\n\t\"valid-until\" : \"2025-20-30\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Get status",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}/pilot?licenseNumber=1234",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"pilot"
+									],
+									"query": [
+										{
+											"key": "licenseNumber",
+											"value": "1234"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "status",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json;charset=UTF-8",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{url-tutorial7}}/pilot?licenseNumber=1234",
+											"host": [
+												"{{url-tutorial7}}"
+											],
+											"path": [
+												"pilot"
+											],
+											"query": [
+												{
+													"key": "licenseNumber",
+													"value": "1234"
+												}
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": "{\n\t\"status\" : \"inactive\"\n}"
+								}
+							]
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Get a pilot",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"flyHour\" : 120,\n\t\"licenseNumber\" : \"5678\",\n\t\"name\" : \"Koko\"\n}\n"
+						},
+						"url": {
+							"raw": "{{url-tutorial7}}/pilot/view/1234",
+							"host": [
+								"{{url-tutorial7}}"
+							],
+							"path": [
+								"pilot",
+								"view",
+								"1234"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add a pilot",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"flyHour\" : 120,\n\t\"licenseNumber\" : \"9012\",\n\t\"name\" : \"Kiki\"\n}"
+						},
+						"url": {
+							"raw": "{{url-tutorial7}}/pilot/add",
+							"host": [
+								"{{url-tutorial7}}"
+							],
+							"path": [
+								"pilot",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a pilot",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url-tutorial7}}/pilot/delete?pilotId=3",
+							"host": [
+								"{{url-tutorial7}}"
+							],
+							"path": [
+								"pilot",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "pilotId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a pilot",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url-tutorial7}}/pilot/update/1?name=Koki&flyHour=140",
+							"host": [
+								"{{url-tutorial7}}"
+							],
+							"path": [
+								"pilot",
+								"update",
+								"1"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Koki"
+								},
+								{
+									"key": "flyHour",
+									"value": "140"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Flight",
+			"item": [
+				{
+					"name": "Get flights",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"flightNumber\": \"9912\",\n    \"origin\": \"BDO - Bandar Udara Internasional Husein Sastranega\",\n    \"destination\": \"CGK - Bandar Udara Soekarno-Hatta\",\n    \"time\": \"1999-03-03\",\n    \"pilotModel\": {\n    \t\"licenseNumber\": \"5678\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{url-tutorial7}}/flight/all",
+							"host": [
+								"{{url-tutorial7}}"
+							],
+							"path": [
+								"flight",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a flight",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url-tutorial7}}/flight/view/1131",
+							"host": [
+								"{{url-tutorial7}}"
+							],
+							"path": [
+								"flight",
+								"view",
+								"1131"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a flight",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url-tutorial7}}/flight/delete?flightId=1",
+							"host": [
+								"{{url-tutorial7}}"
+							],
+							"path": [
+								"flight",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "flightId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a flight",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url-tutorial7}}/flight/update/2?destination=BDJ – Bandar Udara Internasional Syamsuddin Noor,",
+							"host": [
+								"{{url-tutorial7}}"
+							],
+							"path": [
+								"flight",
+								"update",
+								"2"
+							],
+							"query": [
+								{
+									"key": "destination",
+									"value": "BDJ – Bandar Udara Internasional Syamsuddin Noor,"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add a flight",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"flightNumber\": \"2406\",\n    \"origin\": \"BDO - Bandar Udara Internasional Husein Sastranega\",\n    \"destination\": \"AMQ - Bandar Udara Internasional Pattimura, Ambon\",\n    \"time\": \"1999-03-03\",\n    \"pilot\": {\n    \t\"licenseNumber\": \"1234\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{url-tutorial7}}/flight/add",
+							"host": [
+								"{{url-tutorial7}}"
+							],
+							"path": [
+								"flight",
+								"add"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

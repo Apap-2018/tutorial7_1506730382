@@ -1,0 +1,142 @@
+{
+	"info": {
+		"_postman_id": "e28834a7-9137-47e1-9a75-25fed83ec89a",
+		"name": "Tutorial 7 - Mock Server",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Pilot",
+			"item": [
+				{
+					"name": "Get full status",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json; charset=UTF-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"flyHour\" : 600,\n\t\"licenseNumber\" : \"3456\",\n\t\"name\" : \"dia\"\n}"
+						},
+						"url": {
+							"raw": "{{url-tutorial7}}/pilot/full/1234",
+							"host": [
+								"{{url-tutorial7}}"
+							],
+							"path": [
+								"pilot",
+								"full",
+								"1234"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "full",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"flyHour\" : 600,\n\t\"licenseNumber\" : \"3456\",\n\t\"name\" : \"dia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/pilot",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"pilot"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n\t\"status\" : \"inactive\",\n\t\"valid-until\" : \"2025-20-30\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url-tutorial7}}/pilot/status/1234",
+							"host": [
+								"{{url-tutorial7}}"
+							],
+							"path": [
+								"pilot",
+								"status",
+								"1234"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "status",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json;charset=UTF-8",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url-tutorial7}}/pilot?licenseNumber=1234",
+									"host": [
+										"{{url-tutorial7}}"
+									],
+									"path": [
+										"pilot"
+									],
+									"query": [
+										{
+											"key": "licenseNumber",
+											"value": "1234"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n\t\"status\" : \"inactive\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
