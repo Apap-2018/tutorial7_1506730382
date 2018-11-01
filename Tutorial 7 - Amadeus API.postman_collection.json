@@ -1,0 +1,45 @@
+{
+	"info": {
+		"_postman_id": "62d4afee-51b1-483c-8213-7fbed2dac613",
+		"name": "Tutorial 7 - Amadeus API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get airport name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url-amadeus}}?apikey=KA5kMvxb254VRG2AEZoA6EILoRjMLZxh&term=CGK&country=ID&all_airports=false",
+					"host": [
+						"{{url-amadeus}}"
+					],
+					"query": [
+						{
+							"key": "apikey",
+							"value": "KA5kMvxb254VRG2AEZoA6EILoRjMLZxh"
+						},
+						{
+							"key": "term",
+							"value": "CGK"
+						},
+						{
+							"key": "country",
+							"value": "ID"
+						},
+						{
+							"key": "all_airports",
+							"value": "false"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
